@@ -90,9 +90,9 @@ get_latest_release() {
   curl -sL https://api.github.com/repos/$1/releases/latest | grep '"tag_name":' | cut -d'"' -f4
 }
 
-DOCKER_LATEST_VERSION=$(get_latest_release "moby/moby")
-PORTAINER_LATEST_VERSION=$(get_latest_release "portainer/portainer")
-DOCKER_COMPOSE_LATEST_VERSION=$(get_latest_release "docker/compose")
+DOCKER_LATEST_VERSION='v20.10.22'
+PORTAINER_LATEST_VERSION='2.16.2'
+DOCKER_COMPOSE_LATEST_VERSION='v2.15.1'
 
 msg_info "Installing Docker $DOCKER_LATEST_VERSION"
 DOCKER_CONFIG_PATH='/etc/docker/daemon.json'
